@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div class="container">
+  <div class="form-group">
+    <label for="titre" class="form-label">titre</label>
+    <input  type="text" class="form-control" id="nom" name="nom" ngModel required>
+  </div>
+  <div  class="form-group">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" name="description" rows="3" ngModel required></textarea>
+    <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Ajouter</button>
+  </div>
+</div>
+</form>
+<app-user *ngFor = "let user of users"
+          [userNom] ="user.nom"
+          [userDescription] ="user.description"></app-user>
